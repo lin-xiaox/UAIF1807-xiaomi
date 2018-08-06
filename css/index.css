@@ -143,11 +143,61 @@ img{
     margin-right: 0;
 }
 .search{
-    width: 294px;
-    height: 48px;
+    width: 296px;
+    height: 50px;
     float: right;
     margin-top: 25px;
+    position: relative;
+}
+.search input{
+    width: 244px;
+    height: 50px;
+    box-sizing: border-box;
     border: 1px solid #E0E0E0;
+    border-right: none;
+    float: left;
+    text-indent: 1em;
+    outline: none;
+}
+.search button{
+    width: 51px;
+    height: 50px;
+    box-sizing: border-box;
+    border: 1px solid #E0E0E0;
+    float: left;
+    outline: none;
+    background-color: #ffffff;
+}
+.search button span{
+    font-size: 22px;
+    color: #616161;
+}
+.search a{
+    display: block;
+    height: 18px;
+    background-color: #EEEEEE;
+    color: #757575;
+    font-size: 12px;
+    text-align: center;
+    line-height: 18px;
+}
+.search .searcha1{
+    width: 60px;
+    padding: 0 5px;
+    position: absolute;
+    top: 17px;
+    left: 96px;
+}
+.search .searcha2{
+    width: 53px;
+    padding: 0 5px;
+    position: absolute;
+    top: 17px;
+    left: 171px;
+}
+.search a:hover{
+    color: #ffffff;
+    background-color: #ff6700;
 }
 /*导航结束*/
 /*轮播图开始*/
@@ -609,6 +659,11 @@ img{
     background-color: #ffffff;
     float: left;
     position: relative;
+    transition: all 0.2s linear;
+}
+.p_mright ul li:hover{
+    transform: translate(0,-4px);
+    box-shadow: 0 3px 20px 3px rgba(0, 0, 0, 0.1)
 }
 .p_mright ul li .p_mr_img{
     width: 160px;
@@ -764,6 +819,11 @@ img{
     display: block;
     width: 234px;
     height: 300px;
+    transition: all 0.2s linear;
+}
+.main_Box .mBox_lift ul li a:hover{
+    transform: translate(0,-4px);
+    box-shadow: 0 3px 20px 3px rgba(0, 0, 0, 0.1);
 }
 .main_Box .mBox_lift ul li a img{
     display: block;
@@ -937,6 +997,9 @@ img{
     position: absolute;
     top: 45px;
     left: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .mBox_right ul li h4{
     font-size: 12px;
@@ -991,7 +1054,6 @@ img{
 .reco_box{
     width: 1226px;
     height: 320px;
-    overflow: hidden;
 }
 .rbox_main{
     width: 4960px;
@@ -1005,6 +1067,11 @@ img{
     background-color: #FFFFFF;
     float: left;
     font-size: 14px;
+    transition: all 0.2s linear;
+}
+.rbox_main li:hover{
+    transform: translate(0,-4px);
+    box-shadow: 0 3px 20px 3px rgba(0, 0, 0, 0.1);
 }
 .rbox_main li .rbmain_img{
     width: 194px;
@@ -1069,7 +1136,6 @@ img{
 .comment .comment_main{
     width: 100%;
     height: 415px;
-    overflow: hidden;
 }
 .comment .comment_main ul{
     width: 1240px;
@@ -1081,6 +1147,11 @@ img{
     margin: 0 14px 14px 0;
     background-color: #FFFFFF;
     float: left;
+    transition:all 0.2s linear;
+}
+.comment .comment_main ul li:hover{
+    transform: translate(0, -4px);
+    box-shadow: 0 3px 20px 3px rgba(0, 0, 0, 0.1);
 }
 .comment_main ul li .cma_img{
     width: 296px;
@@ -1103,12 +1174,16 @@ img{
     margin: 0 28px 22px;
 }
 .comment_main ul li .cma_review a{
-    display: block;
+    display: -webket-box;
     width: 240px;
     height: 72px;
     font-size: 14px;
     line-height: 24px;
     color: #333333;
+    -webket-box-orient:vertical;/*排布方式垂直排布*/
+    -webket-line-clamp:3;/*指定行数*/
+    line-height:24px;/*注意与height的倍数关系*/
+    overflow:hidden;
 }
 .comment_main ul li .cma_author{
     width: 230px;
@@ -1159,13 +1234,11 @@ img{
 .content .content_main{
     width: 1226px;
     height: 420px;
-    overflow: hidden;
 
 }
 .content_main .cm_box{
     width: 1240px;
     height: 420px;
-
 }
 .content_main .cm_box .cmbox{
     width: 296px;
@@ -1176,6 +1249,41 @@ img{
     float: left;
     position: relative;
     background-color: #FFFFFF;
+    transition: all 0.2s linear;
+    position: relative;
+}
+.cmbox .listprev,.cmbox .listnext{
+    width: 20px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    right: 0;
+    background: url('../img/icon-slides.png') no-repeat -20px;
+    background-size: 80px 48px;
+    opacity: 0;
+}
+.cmbox .listprev{
+    left: 0;
+    background: url('../img/icon-slides.png') no-repeat 0;
+    background-size: 80px 48px;
+}
+.cmbox:hover .listprev{
+    opacity: 0.4;
+} 
+.cmbox:hover .listnext{
+    opacity: 0.4;
+} 
+.cmbox .listprev:hover{
+    opacity: 1;
+}
+.cmbox .listnext:hover{
+    opacity: 1;
+}
+.content_main .cm_box .cmbox:hover{
+    transform: translate(0,-4px);
+    box-shadow: 0 3px 20px 3px rgba(0,0,0,0.3);
 }
 .content_main .cm_box .cmbox .title{
     font-size: 16px;
@@ -1298,7 +1406,7 @@ img{
  .video .video_main{
      width: 1226px;
      height: 285px;
-     overflow: hidden;
+     
  }
 .video .video_main .vm_box{
     width: 1240px;
@@ -1310,6 +1418,11 @@ img{
     margin: 0 14px 14px 0;
     background-color: #FFFFFF;
     float: left;
+    transition: all 0.2s linear;
+}
+.video .video_main .vm_box li:hover{
+    transform: translate(0, -4px);
+    box-shadow: 0 3px 20px 3px rgba(0, 0, 0, 0.1);
 }
 .video .video_main .vm_box li .vmb_img{
     width: 296px;
@@ -1321,6 +1434,10 @@ img{
     width: 296px;
     height: 180px;
     position: relative;
+}
+.video_main .vm_box li .vmb_img a:hover span{
+    background-color: #ff6700;
+    border-color: #ff6700;
 }
 .video_main .vm_box li .vmb_img a img{
     width: 296px;
@@ -1514,6 +1631,9 @@ img{
     color: #757575;
     font-size: 12px;
     line-height: 18px;
+}
+.end_top .end_text .sites a:hover{
+    color: #ff6700;
 }
 .end_top .end_text .sites .sep{
     display: block;
