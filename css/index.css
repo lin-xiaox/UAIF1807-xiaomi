@@ -77,6 +77,7 @@ img{
     width: 120px;
     height: 100%;
     float: right;
+    position: relative;
 }
 .shopping a{
     display: block;
@@ -87,6 +88,7 @@ img{
     background-color: #424242;
     color: #b0b0b0;
     overflow: hidden;
+    transition: all 0.1s linear;
 }
 .shopping a img{
     display: block;
@@ -99,13 +101,30 @@ img{
     vertical-align: -2px;
     font-weight: bold;
 }
-.shopping a:hover{
-    color: #ff6700;
-}
-.shopping a:hover{
-    background-color: #ffffff;
+.shopping .shopbox{
+    width: 316px;
+    height: 0;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    z-index: 20;
+    overflow: hidden;
+    transition: all 0.1s linear;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    line-height: 98px;
 }
 /* 头部结束 */
+
+
+
+
+
+
+
+
 /*导航开始*/
 .nav_box{
     width: 1226px;
@@ -200,6 +219,16 @@ img{
     background-color: #ff6700;
 }
 /*导航结束*/
+
+
+
+
+
+
+
+
+
+
 /*轮播图开始*/
 .banner{
     width: 1226px;
@@ -220,6 +249,10 @@ img{
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 5;
+}
+.banner .imgBox li.active{
+    z-index: 10;
 }
 .banner .imgBox li a{
     display:block;
@@ -238,6 +271,7 @@ img{
     top: 0;
     left: 0px;
     background-color: rgba(0,0,0,0.6);
+    z-index:40; 
 }
 .banner_left ul{
     width: 234px;
@@ -250,6 +284,49 @@ img{
 }
 .banner_left ul li:hover{
     background-color: #ff6700;
+}
+.banner_left ul li .asideBox{
+    width: 795px;
+    height: 460px;
+    position: absolute;
+    top: 0;
+    left: 234px;
+    background: #fff;
+    display: none;
+    border: 1px solid #E0E0E0;
+    border-left: 0;
+    column-count: 3;
+    column-width: 265px;
+    column-fill: auto;
+    column-gap: 0;
+}
+.banner_left ul li .asideBox .kkkk{
+    width: 265px;
+    height: 76px;
+    display: block;
+
+}
+.banner_left ul li .asideBox .kkkk a{
+    display: block;
+    width: 225px;
+    height: 40px;
+    padding: 18px 20px;
+    float: left;
+    line-height: 42px;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+.banner_left ul li .asideBox .kkkk img{
+    float: left;
+    margin-right: 12px;
+}
+.banner_left ul li .asideBox .kkkk span{
+    display: block;
+    float: left;
+    font-size: 14px;
+    color: #333;
+    font-weight: 400;
+    padding-right: 25px;
 }
 .banner_left ul li a{
     display: block;
@@ -274,6 +351,7 @@ img{
     position: absolute;
     bottom: 20px;
     right: 30px;
+    z-index: 20;
 }
 .banner .dot_box li{
     width:20px;
@@ -290,10 +368,10 @@ img{
     border-radius: 50%;
     background-color: rgba(0,0,0,0.4);
 }
-.banner .dot_box li a:hover{
+.banner .dot_box li a.active{
     background-color: #FFFFFF;
     border: 2px solid #fff;
-    border-color: rgba(0,0,0,0.4);
+    border-color: rgba(0,0,0,0.4); 
 }
 .banner .prev_box{
     width: 41px;
@@ -304,6 +382,7 @@ img{
     bottom: 0;
     margin: auto;
     background: url("../img/icon-slides.png") no-repeat -84px;
+    z-index: 30;
 }
 .banner .prev_box:hover{
     background: url("../img/icon-slides.png") no-repeat 0;
@@ -317,6 +396,7 @@ img{
     bottom: 0;
     margin: auto;
     background: url("../img/icon-slides.png") no-repeat -125px;
+    z-index: 30;
 }
 .banner .next_box:hover{
     background: url("../img/icon-slides.png") no-repeat -43px;
@@ -405,6 +485,8 @@ img{
     bottom: 0;
 }
 /* baby结束 */
+
+
 
 
 
@@ -565,6 +647,9 @@ img{
     text-decoration: line-through;
 }
 /* 小米闪购结束 */
+
+
+
 
 
 
@@ -735,6 +820,15 @@ img{
 /*手机结束*/
 
 
+
+
+
+
+
+
+
+
+
 /*展示开始*/
 .show{
     width: 1226px;
@@ -755,6 +849,15 @@ img{
     height: 120px;
 }
 /*展示结束*/
+
+
+
+
+
+
+
+
+
 
 /*家电开始*/
 .homeelec{
@@ -1045,6 +1148,15 @@ img{
 }
 /*家电结束*/
 
+
+
+
+
+
+
+
+
+
 /*为你推荐开始*/
 .recommend{
     width: 1226px;
@@ -1116,6 +1228,17 @@ img{
 }
 /*为你推荐结束*/
 
+
+
+
+
+
+
+
+
+
+
+
 /*热评产品开始*/
 .comment{
     width: 1226px;
@@ -1174,12 +1297,12 @@ img{
     margin: 0 28px 22px;
 }
 .comment_main ul li .cma_review a{
-    display: -webket-box;
     width: 240px;
     height: 72px;
     font-size: 14px;
     line-height: 24px;
     color: #333333;
+    display: -webket-box;
     -webket-box-orient:vertical;/*排布方式垂直排布*/
     -webket-line-clamp:3;/*指定行数*/
     line-height:24px;/*注意与height的倍数关系*/
@@ -1224,6 +1347,16 @@ img{
     line-height: 21px;
 }
 /*热评产品结束*/
+
+
+
+
+
+
+
+
+
+
 
 /*内容开始*/
 .content{
@@ -1397,6 +1530,18 @@ img{
     background-color: #FFFFFF;
 }
 /*内容结束*/
+
+
+
+
+
+
+
+
+
+
+
+
 /*视频开始*/
  .video{
      width: 1226px;
@@ -1477,6 +1622,18 @@ img{
     text-align: center;
 }
 /*视频结束*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*小米底部开始*/
@@ -1595,6 +1752,21 @@ img{
 }
 /*小米底部结束*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .end{
     width: 100%;
     height: 106px;
@@ -1675,6 +1847,25 @@ img{
     font-size: 18px;
     text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*右侧导航开始*/
 .left_navlist{
