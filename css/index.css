@@ -896,7 +896,7 @@ img{
     border-bottom: 2px solid transparent;
     cursor: pointer;
 }
-.toptop .top_right ul li:hover{
+.toptop .top_right ul li.active{
     color: #ff6700;
     border-bottom: 2px solid #ff6700;
 }
@@ -937,10 +937,17 @@ img{
     width: 992px;
     height: 628px;
     float: left;
+    position: relative;
 }
 .main_Box .mBox_right ul{
     width: 992px;
     height: 628px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.main_Box .mBox_right ul.active{
+    z-index: 10;
 }
 .main_Box .mBox_right ul li{
     width: 234px;
@@ -1394,7 +1401,7 @@ img{
     margin: auto 0;
     right: 0;
     background: url('../img/icon-slides.png') no-repeat -20px;
-    background-size: 80px 48px;
+    background-size: 80px 48px; 
     opacity: 0;
 }
 .cmbox .listprev{
@@ -1525,6 +1532,11 @@ img{
     display: block;
     width: 6px;
     height: 6px;
+    border:2px solid #fff;
+    border-radius: 50%;
+    background-color: #bababa;
+}
+.cmbox .dianlist li span.active{ 
     border:2px solid #ff6700;
     border-radius: 50%;
     background-color: #FFFFFF;
@@ -1874,6 +1886,7 @@ img{
     position: fixed;
     right: 34px;
     bottom: 70px;
+    z-index: 100;
 }
 .leftnav_top{
     width: 27px;
