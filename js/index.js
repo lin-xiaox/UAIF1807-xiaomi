@@ -1,5 +1,42 @@
 window.onload = function(){
 
+//导航栏下拉效果
+
+let nav = document.querySelector(".nav");
+let yijis = document.querySelectorAll(".nav li");
+let erjis = document.querySelectorAll(".nav li .erji")
+console.log(nav,yijis,erjis)
+yijis.forEach((v,i)=>{
+  v.onmouseover = function(){
+    this.classList.add("active");
+  }
+  v.onmouseleave = function(){
+    this.classList.remove("active");
+    erjis.forEach((item,index)=>{
+      item.classList.remove("transition")
+    })
+    if(erjis[i]){
+      erjis[i].classList.add("transition")
+    }
+  }
+})
+nav.onmouseleave = function(){
+  erjis.forEach((item,index)=>{
+    item.classList.add("transition")
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
 //购物车下拉效果
     let shop=document.getElementsByClassName("shopping")[0]; 
     let shopa=document.getElementById("shopa"); 
@@ -98,21 +135,37 @@ window.onload = function(){
     }
 
 
-//家电选项卡效果
-
+/////////////////////////////////////////////家电选项卡效果//////////////////////////////////////////////
+function xuanka(jddians,jdtops){
+  jdtops.forEach((item,index)=>{
+    item.onmouseenter = function(){
+      for(let i=0;i<jdtops.length;i++){
+        jdtops[i].classList.remove("active")
+        jddians[i].classList.remove("active")
+      }
+      item.classList.add("active");
+      jddians[index].classList.add("active");
+    }
+  })
+}
 let jddians = document.querySelectorAll(".jiadian .main_Box .mBox_right ul")
 let jdtops = document.querySelectorAll(".jiadian .toptop .top_right li")
-console.log(jddians,jdtops)
-jdtops.forEach((item,index)=>{
-  item.onmouseenter = function(){
-    for(let i=0;i<jdtops.length;i++){
-      jdtops[i].classList.remove("active")
-      jddians[i].classList.remove("active")
-    }
-    item.classList.add("active");
-    jddians[index].classList.add("active");
-  }
-})
+xuanka(jddians,jdtops);
+let zndians = document.querySelectorAll(".zhineng .main_Box .mBox_right ul")
+let zntops = document.querySelectorAll(".zhineng .toptop .top_right li")
+console.log(zndians,zntops)
+xuanka(zndians,zntops);
+// console.log(jddians,jdtops)
+// jdtops.forEach((item,index)=>{
+//   item.onmouseenter = function(){
+//     for(let i=0;i<jdtops.length;i++){
+//       jdtops[i].classList.remove("active")
+//       jddians[i].classList.remove("active")
+//     }
+//     item.classList.add("active");
+//     jddians[index].classList.add("active");
+//   }
+// })
 
 
 
@@ -125,7 +178,7 @@ let cprev1 = document.querySelector(".cmbox1 .listprev")
 let cnext1 = document.querySelector(".cmbox1 .listnext")
 let width = wrapper_ul1.offsetWidth;
 let cishu = 3;
-console.log(content,wrapper_ul1,width,condian,cprev1,cnext1);
+// console.log(content,wrapper_ul1,width,condian,cprev1,cnext1);
 let num = 0;
 let flag;
 cnext1.onclick = function(){
@@ -175,6 +228,61 @@ condian.forEach((item,index)=>{
     })
   }
 })
+
+
+//小米闪购
+
+let sprev = document.querySelector(".topright .prev")
+let snext = document.querySelector(".topright .next")
+let sgbox = document.querySelector(".fbox .boxright ul")
+let swidth = sgbox.offsetWidth/9;
+let scishu = 0;
+// console.log(sprev,snext,sgbox,swidth)
+snext.onclick = function(){
+  scishu++;
+  if (scishu==1) {
+    sgbox.style.transform = "translateX("+(-swidth*4+50)+"px)";
+  }else if(scishu>=2){
+     scishu=2;
+    sgbox.style.transform = "translateX("+(-swidth*5+50)+"px)";
+  }
+}
+sprev.onclick = function(){
+  scishu--;
+  if (scishu==1) {
+    sgbox.style.transform = "translateX("+(-swidth*4+50)+"px)";
+  }else if(scishu<=0){
+    scishu=0;
+    sgbox.style.transform = "translateX("+(-swidth*0)+"px)";
+  }
+}
+
+///////////////////////////////////////////// 为你推荐 /////////////////////////////////////////////////
+let rebox = document.querySelector(".rbox_main");
+let rewidth = parseInt(getComputedStyle(rebox,null).width)/3;
+let reprev = document.querySelector(".recommend .prev");
+let renext = document.querySelector(".recommend .next");
+console.log(rebox,rewidth,reprev,renext)
+let recishu = 0;
+renext.onclick = function(){
+  recishu++;
+  if(recishu>=2){
+    recishu=2;
+  }
+  rebox.style.transform = "translateX("+(-rewidth*recishu)+"px)";
+}
+reprev.onclick = function(){
+  recishu--;
+  if(recishu<=0){
+    recishu=0;
+  }
+  rebox.style.transform = "translateX("+(-rewidth*recishu)+"px)";
+}
+
+
+
+
+
 
 
 
