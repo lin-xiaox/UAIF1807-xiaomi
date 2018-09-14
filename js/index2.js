@@ -23,7 +23,7 @@ yijis.mouseleave(function(){
 	let index = $(this).index()
     yijis.removeClass("active");
     erjis.removeClass("transition")
-    console.log(index)
+    // console.log(index)
     if(erjis.eq(index)){
       erjis.eq(index).addClass("transition")
     }

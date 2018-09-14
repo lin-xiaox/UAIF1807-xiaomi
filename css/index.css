@@ -392,25 +392,25 @@ img{
     justify-content: space-around;
 }
 .banner .dot_box li{
-    width:6px;
-    height: 6px;
+    width:auto;
+    height: auto;
     float: left;
-    border: 2px solid #fff;
-    border-color: rgba(255,255,255,0.3);
+    /* border: 2px solid #fff; */
+    /* border-color: rgba(255,255,255,0.3);
     border-radius: 50%;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.4); */
 }
 .banner .dot_box li a{
     display: block;
     width: 6px;
     height: 6px;
-    /* margin: 0 5px; */
-    /* border: 2px solid #fff; */
-    /* border-color: rgba(255,255,255,0.3); */
+    margin: 0 5px; 
+    border: 2px solid #fff;
+    border-color: rgba(255,255,255,0.3);
     border-radius: 50%;
-    /* background-color: rgba(0,0,0,0.4); */
+    background-color: rgba(0,0,0,0.4);
 }
-.banner .dot_box li.active{
+.banner .dot_box li a.active{
     background-color: #FFFFFF;
     border: 2px solid #fff;
     border-color: rgba(0,0,0,0.4); 
